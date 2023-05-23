@@ -1,7 +1,27 @@
 <template>
     <v-container>
         <v-row justify="center">
-            <h1>LoginPage</h1>
+            <v-col cols="12" sm="8" lg="6">
+                <v-card class="elevetion-12">
+                    <v-toolbar dark color="indigo-accent-4" class="pl-4">
+                        Авторизация
+                    </v-toolbar>
+                    <v-card-text>
+                        <v-form v-model="valid" ref="form" validation>
+                            <v-text-field prepend-icon="mdi-account" name="email" label="Email" type="email" v-model="email"
+                            :rules="emailRules">
+                            </v-text-field>
+                            <v-text-field prepend-icon="mdi-lock" name="password" label="Password" type="password" v-model="password"
+                            :rules="passwordRules">
+                            </v-text-field>
+                        </v-form>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="light-blue-darken-3" @click="onSubmit" :disabled="!valid">Войти</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-col>
         </v-row>
     </v-container>
 </template>
@@ -9,8 +29,31 @@
 export default {
     data() {
         return {
+            email: "",
+            password: "",
+            valid: false,
+            emailRules: [
+                v => !!v || 'E-mail обязателен',
+                v => /.+@.+\..+/.test(v) || 'E-mail должен быть действующим'
+            ],
+            passwordRules: [
+                v => !!v || 'Пароль обязателен',
+                v => (v && v.length >= 6) || 'Пароль должен быть больше или равен 6 символам'
+            ]
+
         }
+    },
+    methods: {
+        onSubmit() {
+            if (this.$refs.form.validate()) {
+                const user = {
+                    email: this.email,
+                    password: this.password
+                }
+                console.log(user)
+            }
+        }
+
     }
 }
 </script>
-

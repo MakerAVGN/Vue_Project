@@ -26,7 +26,7 @@
   </v-list>
 </v-navigation-drawer>
 
-      <v-app-bar app dark color="primary">
+      <v-app-bar app dark color="indigo-accent-4">
         <v-app-bar-nav-icon @click="drawer = !drawer">
         </v-app-bar-nav-icon>
         <v-spacer></v-spacer>
@@ -55,7 +55,7 @@ export default {
     return {
       drawer: false,
       links: [
-        { title: "Войти", icon: "mdi-lock", url: "/login" },
+        { title: "Авторизоваться", icon: "mdi-lock", url: "/login" },
         { title: "Регистрация", icon: "mdi-face", url: "/registration" },
         { title: "Товары", icon: "mdi-bookmark-multiple-outline", url: "/orders" },
         { title: "New ad", icon: "mdi-note-plus-outline", url: "/new" },
