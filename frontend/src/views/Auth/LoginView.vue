@@ -11,7 +11,7 @@
                             <v-text-field prepend-icon="mdi-account" name="email" label="Email" type="email" v-model="email"
                             :rules="emailRules">
                             </v-text-field>
-                            <v-text-field prepend-icon="mdi-lock" name="password" label="Password" type="password" v-model="password"
+                            <v-text-field prepend-icon="mdi-lock" name="password" label="Пароль" type="password" v-model="password"
                             :rules="passwordRules">
                             </v-text-field>
                         </v-form>
@@ -32,6 +32,7 @@ export default {
             email: "",
             password: "",
             valid: false,
+            confirmPassword: '',
             emailRules: [
                 v => !!v || 'E-mail обязателен',
                 v => /.+@.+\..+/.test(v) || 'E-mail должен быть действующим'
@@ -39,7 +40,8 @@ export default {
             passwordRules: [
                 v => !!v || 'Пароль обязателен',
                 v => (v && v.length >= 6) || 'Пароль должен быть больше или равен 6 символам'
-            ]
+            ],
+            
 
         }
     },
