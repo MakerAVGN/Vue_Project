@@ -26,10 +26,8 @@
               <v-spacer></v-spacer>
             </v-card-actions>
           </v-row>
-
     </v-layout>
     </v-card>
-
     </v-container>
 </template>
 
