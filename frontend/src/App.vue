@@ -29,6 +29,11 @@
       <v-app-bar app dark color="indigo-accent-4">
         <v-app-bar-nav-icon @click="drawer = !drawer">
         </v-app-bar-nav-icon>
+        <v-toolbar-title>
+          <v-btn to="/">
+          На главную
+          </v-btn>
+          </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn v-for="link in links"
@@ -65,6 +70,9 @@ export default {
   }
 }
 </script>
+
+<style>
+</style>
 
 
 
